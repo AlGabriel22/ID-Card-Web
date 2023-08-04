@@ -4,21 +4,21 @@
 }
 
 body {
-    background-image: radial-gradient(circle, #eeeeee, #e6e6e6, #dfdfdf, #d7d7d7, #d0d0d0);
+    margin: 0;
     min-height: 100vh;
     max-width: 100vw;
 }
 
-.container {
+.contain {
     /* display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px; */
     display: flex;
     flex-direction: row;
-    gap: 60px;
+    /* gap: 60px; */
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
     height: 100%;
     position: absolute;
     left: 50%;
@@ -26,9 +26,20 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.imagen{
+    width: 50%;
+    height: 100%;
+    /* background-image: radial-gradient(circle, #f6f6f6, #e7e6e6, #dfdede, #c7c5c5, #777777); */
+    background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(177,177,177,0.989233193277311) 100%);
+}
 .imagen img{
-    width: 110%;
-    height: 110%;
+    /* width: 80%;
+    height: 40%; */
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     /* border-radius: 50%; */
     /* border: 1px solid rgba(0, 0, 0, 0.5); */
     box-shadow: 7px 5px 8px rgba(0, 0, 0, 0.2);
@@ -39,12 +50,14 @@ body {
     flex-direction: column;
     justify-content: center;
     font-family: 'Comfortaa', cursive;
+    margin: 25px;
+    width: 50%;
 }
 
 .info h1{
     margin: 1.25rem;
     text-align: center;
-    color: #575757;
+    color: #2d2d2d;
 }
 
 .info p{
@@ -52,23 +65,47 @@ body {
     font-size: 1.25rem;
 }
 
-/* button{
-    justify-content: end;
-    
-} */
-
 button:hover { 
     background: linear-gradient(45deg, rgb(48, 48, 48), rgb(99, 99, 99));
     box-shadow: 4px 8px 6px rgba(0, 0, 0, 0.3);
 } 
 
 @media(max-width: 991px) {
-    .container {
+    .contain {
         display: flex;
         flex-direction: column;
+        
+    }
+
+    .imagen{
+        width: 100%;
+        height: 50%;
     }
 
     .info p{
         padding: 5px;
     }
 } 
+
+@media(max-width: 420px){
+    .contain {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .imagen{
+        width: 100%;
+        height: 40%;
+    }
+
+    .info{
+        height: 60%;
+        width: 100%;
+        margin:auto;
+    }
+
+    .info p{
+        text-align: center;
+        font-size: 1rem;
+    }
+}
